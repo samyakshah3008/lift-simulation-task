@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    transition: all 0.2s linear;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+:root {
+
+    --gray: #3e4152;
+    --bg-code: #fafafa;
+    --card-color: #001219;
+}
+
+h1 {
+    text-align: center;
+    margin: 5rem auto;
+    font-size: 2.8rem;
+}
+
+label {
+    font-size: 2.1rem;
+    display: block;
+    margin: 0.8rem 1.2rem;
+}
+
+input {
+    width: 40%;
+    display: block;
+    padding: 1rem;
+    margin: 1.25rem auto;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.input {
+    border: 2px solid black;
+}
+
+button.generate-btn {
+    margin: 1.4rem;
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    font-size: 1.8rem;
+    opacity: 1;
+}
+
+.center-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.generate-btn:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.error {
+    font-size: 1.58rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.floor {
+
+    border-bottom: 2px solid var(--card-color);
+    padding: 1rem;
+    position: relative;
+    height: 125px;
+}
+
+.flex-sides {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.btn {
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-up {
+    margin: 0.4rem;
+}
+
+.fa-sharp {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.8rem;
+}
+
+.btn-down {
+    margin: 0.4rem;
+}
+
+#floor-1 {
+    display: flex;
+    position: absolute;
+    left: 10rem;
+    bottom: -0.05rem;
+}
+
+.lift {
+    display: flex;
+    width: 12.5rem;
+    height: 12.5rem;
+    border: 2px solid var(--card-color);
+    margin: 0 1.2rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.left-door {
+    background: var(--gray);
+    width: 6rem;
+    margin-right: 0.05rem;
+    border-right: 4px solid var(--card-color);
+    border: 2px solid var(--bg-code);
+}
+
+.right-door {
+    background: var(--gray);
+    width: 6rem;
+    margin-left: 0.05rem;
+    border-left: 4px solid var(--card-color);
+    border: 2px solid var(--bg-code);
+}
+
+.left-door--animation {
+    animation: moveLeftDoor 2.5s ease-in-out;
+}
+
+.right-door--animation {
+    animation: moveRightDoor 2.5s ease-in-out;
+}
+
+.moveLiftUp--animation {
+    transition: all 5s;
+}
+
+
+
+@keyframes moveLeftDoor {
+    0% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(-5.5rem)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes moveRightDoor {
+    0% {
+        transform: translateX(0)
+    }
+
+    50% {
+        transform: translateX(5.5rem)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@media (max-width: 550px) {
+    html {
+        font-size: 50%;
+    }
+
+    .lift {
+        width: 10rem;
+        height: 10rem;
+        margin: 0.5rem;
+    }
+}

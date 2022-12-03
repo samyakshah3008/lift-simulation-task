@@ -6,25 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lift Simulation Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
-    <nav>
-        <div class="nav-container">
-            <input type="text" placeholder="Please enter no. of floors" class="floor-input">
-            <input type="text" placeholder="Please enter no. of lifts" class="lift-input">
-            <button class="implement-btn">Implement</button>
-            <div class="latest-lifts-count-value">Lifts: </div>
-            <div class="latest-floors-count-value">Floors: </div>
-        </div>
-    </nav>
 
-    <main>
-        <div class="main-container">
+    <div class="main-container">
+        <h1>Lift Simulation</h1>
 
-        </div>
-    </main>
+        <form class="get-lifts-floors-data">
+
+
+            <input id="input-lifts" placeholder="Enter the number of lifts between 1 to 15" class="input" type="number"
+                required />
+            <input id="input-floors" placeholder="Enter the number of floors between 1 to 15" class="input"
+                type="number" required />
+
+            <div class="center-btn">
+                <button type="submit" disabled class="generate-btn">Generate</button>
+            </div>
+            <div class="error"></div>
+        </form>
+
+    </div>
+
+    <section class="playground">
+
+    </section>
+
 
     <script src="./src/app.js"></script>
 </body>
