@@ -92,7 +92,14 @@ const handleLifts = (position) => {
   const liftsTarget = Array.from(document.querySelectorAll(".lift"));
   if (liftsTarget.find((lift) => lift.dataset.status === "free")) {
     moveLiftsInOrder(position);
+  } else {
+    calledLift(position);
   }
+};
+
+let liftsPush = [];
+const calledLift = (pos) => {
+  liftsPush.push(pos);
 };
 
 const moveLiftsInOrder = (pos) => {
@@ -113,6 +120,12 @@ const liftMovement = (lift, pos) => {
   lift.style.transform = `translateY(-${12.5 * pos}rem)`;
   lift.style.transition = `all ${distance * 2}s linear`;
   doorsOpening(lift, pos);
+  setTimeout(() => {
+    if (liftsPush.length > 0) {
+      liftMovement(lift, liftsPush[0]);
+      liftsPush.shift();
+    }
+  }, distance * 2000 + 6000);
 };
 
 const doorsOpening = (lift, pos) => {
